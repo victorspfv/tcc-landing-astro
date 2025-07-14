@@ -1,0 +1,278 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Image from "astro/components/Image.astro";
+---
+
+<Layout title="About Us - The Closet Clique">
+    <Header />
+
+    <main class="min-h-screen bg-white">
+        <!-- Hero Section -->
+        <section class="py-6 bg-primary">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-xl md:text-4xl font-pacifico text-white">About Us</h1>
+            </div>
+        </section>
+
+        <section class="py-10 md:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col items-center justify-start gap-6 lg:flex-row">
+                    <div class="flex w-full flex-col items-start justify-start gap-6 md:gap-24 lg:w-1/2">
+                        <div class="pr-6">
+                            <h2 class="mb-6 text-4xl font-bold md:text-5xl lg:mb-10 lg:text-6xl">Our Mission</h2><p
+                                class="mb-9 lg:text-xl">
+                                The Closet Clique empowers girls through closet sharing by creating trusted,
+                                school-based communities that promote sustainability, style, and connection. It's an
+                                easy, fun way to access outfits for every occasion while encouraging young women to
+                                embrace entrepreneurship and community spirit.
+                            </p>
+                        </div>
+						<div class="flex flex-col items-center justify-center gap-6 md:flex-row">
+                            <Image
+                                layout='constrained'
+								width={1000}
+								height={1000}
+                                src="/src/assets/images/img1.webp"
+                                alt="about 1"
+                                class="bg-white shadow-lg p-2 aspect-[0.7] w-full object-cover md:w-1/2 hidden lg:block responsive-image"
+                            />
+							<div class="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
+                                <Image
+                                layout='constrained'
+									width={1000}
+									height={1000}
+                                    src="/src/assets/images/img2.webp"
+                                    alt="about 2"
+                                    class="bg-white shadow-lg p-2 aspect-[1.1] object-cover md:block responsive-image"
+                                />
+								<Image
+                                layout='constrained'
+									width={1000}
+									height={1000}
+                                    src="/src/assets/images/img3.webp"
+                                    alt="about 3"
+                                    class="bg-white shadow-lg p-2 aspect-[0.7] object-cover hidden md:block responsive-image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+					<div class="flex w-full flex-col items-center justify-center gap-12 pt-12 lg:w-1/2 lg:pt-48">
+                        <div class="flex flex-col items-center justify-center gap-6 md:flex-row">
+                            <Image
+                            layout='constrained'
+								width={1000}
+								height={1000}
+                                src="/src/assets/images/img4.webp"
+                                alt="about 4"
+                                class="bg-white shadow-lg p-2 aspect-[0.9] w-full object-cover md:w-1/2 responsive-image"
+                            />
+							<div class="flex w-full flex-col items-center justify-center gap-6 md:w-1/2">
+                                <Image
+                                layout='constrained'
+									width={1000}
+									height={1000}
+                                    src="/src/assets/images/img5.webp"
+                                    alt="about 5"
+                                    class="bg-white shadow-lg p-2 aspect-[0.8] object-cover hidden md:block responsive-image"
+                                />
+								<Image
+                                layout='constrained'
+									width={1000}
+									height={1000}
+                                    src="/src/assets/images/img6.webp"
+                                    alt="about 6"
+                                    class="bg-white shadow-lg p-2 aspect-[0.9] object-cover responsive-image"
+                                />
+                            </div>
+                        </div>
+						<div class="md:px-8">
+                            <h2 class="mb-8 text-4xl font-bold md:text-5xl lg:mb-10 lg:text-6xl">Our Vision</h2><p
+                                class="mb-9 lg:text-xl">
+                                We aim to become the go-to closet-sharing platform for high school and college girls
+                                nationwide where closets are connected, style is circular, and trust comes from
+                                community. We envision a world where dressing up doesn't mean buying new, but shopping
+                                smarter.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety, Trust and Privacy Section -->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 items-start">
+                    <div class="w-full lg:w-1/2">
+                        <h2 class="text-4xl md:text-5xl font-pacifico text-[#5CA1CB] mb-8">
+                            Safety, Trust and Privacy
+                        </h2>
+                        <div class="space-y-8">
+                            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#E796BA]">
+                                <h3 class="text-xl font-bold text-[#00486D] mb-3">Verified Identity</h3>
+                                <p class="text-[#00486D] leading-relaxed">
+                                    The Closet Clique is built on a foundation of safety, trust, and convenience. Every user
+                                    must verify their identity using a school email address, home address, and phone number.
+                                    This information is required to create a profile but is never publicly displayed.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#5CA1CB]">
+                                <h3 class="text-xl font-bold text-[#00486D] mb-3">Community Connection</h3>
+                                <p class="text-[#00486D] leading-relaxed">
+                                    What is shared with other verified users is each girl's name, Instagram handle, and
+                                    school affiliation helping foster a sense of community and trusted connection within
+                                    each "clique." Most transactions occur between girls who know one another or are
+                                    connected through just one or two degrees of separation.
+                                </p>
+                            </div>
+
+                            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-[#8DCAC3]">
+                                <h3 class="text-xl font-bold text-[#00486D] mb-3">Private & Secure Transactions</h3>
+                                <p class="text-[#00486D] leading-relaxed">
+                                    Your closet activity is private, only visible to you and the other party in the
+                                    transaction. All communication takes place within the app via direct messaging, and
+                                    users are encouraged to arrange pickups or drop-offs in safe, convenient spaces.
+                                    Payments are processed securely through the app using Stripe and Apple Pay.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 flex flex-col gap-6">
+                        <div class="bg-[#5CA1CB] text-white p-8 rounded-lg">
+                            <h3 class="text-2xl font-pacifico mb-4">Our Commitment</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>100% Verified School Communities</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>Secure In-App Messaging</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>Protected Personal Information</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                    </svg>
+                                    <span>Safe Meeting Locations</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-[#E796BA] text-white p-8 rounded-lg">
+                            <h3 class="text-2xl font-pacifico mb-4">Trust & Safety Tips</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                    </svg>
+                                    <span>Meet in school or public places</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                    </svg>
+                                    <span>Keep communication in-app</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                                    </svg>
+                                    <span>Report suspicious activity</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <!-- Our Logo Section -->
+            <section class="py-16 bg-gray-50">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="text-4xl md:text-5xl font-pacifico mb-12 text-center">Our Logo</h2>
+
+                    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">The Key & Keyhole</h3>
+                            <p class="text-lg leading-relaxed mb-4">
+                                Symbols of trust, access, and individuality.
+                            </p>
+                            <p class="leading-relaxed">
+                                The key represents the idea that every girl's unique ability to unlock her style, her
+                                story, and her place within a verified school network. The keyhole is the invitation to
+                                open the door to a secure, curated space where closets are shared with trusted peers.
+                            </p>
+                        </div>
+                        <div class="flex justify-center">
+                            <div class="flex items-center justify-center w-[200px] md:w-[300px] h-auto">
+                                <Image
+									width={1000}
+									height={1000}
+                                    src="/src/assets/keyhole.svg"
+                                    alt="Logo"
+                                    class="w-full h-full object-cover"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-12">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">The Intertwined Double C</h3>
+                            <p class="text-lg leading-relaxed mb-2">Connection and community.</p>
+                            <p class="leading-relaxed">
+                                The double C in the Closet Clique is more than just a name. Two letters, looped
+                                together, forming something stronger than they could alone.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">The Twin Marks</h3>
+                            <p class="text-lg leading-relaxed mb-2">A reminder of your value.</p>
+                            <p class="leading-relaxed mb-2">
+                                The twin marks reflect self-worth, authenticity, and the inner glow that comes from
+                                knowing you have something to offer.
+                            </p>
+                            <p class="leading-relaxed">Every closet holds value. Every girl shines.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">The 'F' at the Bottom of the Key</h3>
+                            <p class="leading-relaxed">
+                                A nod to friendship and family. This subtle letter stands for the relationships that
+                                matter most. It's a tribute to the support systems that inspire, uplift, and connect us.
+                                They're the foundation of The Closet Clique.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Welcome Section -->
+            <section class="py-20 bg-primary">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-4xl md:text-6xl font-pacifico text-white mb-4">Welcome to The Clique.</h2>
+                    <p class="text-2xl md:text-3xl font-pacifico text-white">
+                        Every detail is designed with you in mind.
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <Footer />
+    </main>
+</Layout>

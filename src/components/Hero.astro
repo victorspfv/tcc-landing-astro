@@ -1,0 +1,39 @@
+---
+// Hero section with collage background and overlay text
+---
+
+<section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br from-[#5CA1CB] to-[#8DCAC3] overflow-hidden">
+    <div class="absolute inset-0 opacity-60">
+        <div class="grid grid-cols-6 gap-1 h-full">
+          {/* Creating a photo grid effect with placeholder images */}
+          {Array.from({ length: 24 }, (_, i) => (
+            <div
+              class="bg-cover bg-center"
+              style={{
+                backgroundImage: `url(https://images.unsplash.com/photo-${
+                  [
+                    '1649972904349-6e44c42644a7',
+                    '1581091226825-a6a2a5aee158',
+                    '1519389950473-47ba0277781c',
+                    '1721322800607-8c38375eef04',
+                    '1582562124811-c09040d0a901'
+                  ][i % 5]
+                }?w=300&h=300&fit=crop)`,
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Overlay */}
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#5CA1CB]/30 to-[#5CA1CB]/60" />
+
+      {/* Content */}
+      <div class="relative z-10 flex items-center justify-center min-h-[50vh] lg:min-h-[80vh] px-4">
+        <div class="text-center">
+          <h1 class="text-6xl md:text-8xl font-pacifico text-white mb-8 text-shadow">
+            your clique, your closet
+          </h1>
+        </div>
+      </div>
+</section> 

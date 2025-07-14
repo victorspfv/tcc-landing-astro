@@ -1,0 +1,63 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+---
+
+<Layout title="Philanthropy - The Closet Clique">
+    <Header />
+
+    <main class="min-h-screen bg-white">
+        <!-- Hero Section -->
+        <section class="py-6 bg-primary">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-xl md:text-4xl font-pacifico text-white">Philanthropy</h1>
+            </div>
+        </section>
+
+        <!-- Philanthropy Section -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-lg">
+                    <div class="flex flex-col items-center gap-12">
+                        <!-- Icon -->
+                        <div class="w-20 h-20 bg-[#5CA1CB] rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="space-y-8 text-center max-w-3xl">
+                            <p class="text-2xl font-pacifico text-[#5CA1CB]">
+                                At The Closet Clique, we believe that every closet has the power to give.
+                            </p>
+                            
+                            <div class="bg-white rounded-xl p-6 shadow-sm">
+                                <p class="text-lg leading-relaxed text-[#00486D]">
+                                    Each year during the holiday season, we host a community-wide Closet Cleanout, inviting girls to
+                                    donate gently loved clothing and accessories to support local charities serving women, teens and
+                                    families.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-white rounded-xl p-6 shadow-sm">
+                                <p class="text-lg leading-relaxed text-[#00486D]">
+                                    It's our way of turning personal style into shared impact, clearing space in your closet while
+                                    making room for someone else to feel seen, confident and care for.
+                                </p>
+                            </div>
+
+                            <p class="text-2xl font-pacifico text-[#E796BA]">
+                                Because at The Closet Clique, we believe giving back is always in style.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+

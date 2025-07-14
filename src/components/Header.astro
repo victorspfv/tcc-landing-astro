@@ -1,0 +1,65 @@
+---
+// Header component with navigation
+---
+
+<header class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <div class="text-2xl font-bold text-[#5CA1CB]">
+          <span class="block text-sm font-normal">THE CLOSET</span>
+          <span class="block text-3xl font-bold">CLIQUE</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium transition-colors">
+          HOME
+        </a>
+        <a href="/about" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium transition-colors">
+          ABOUT US
+        </a>
+        <a href="/clique-crew" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium transition-colors">
+          CLIQUE CREW
+        </a>
+        <a href="/philanthropy" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium transition-colors">
+          PHILANTHROPY
+        </a>
+        <a href="/contact" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium transition-colors">
+          CONTACT US
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-[#5CA1CB] hover:text-[#E796BA]">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden pb-4">
+      <div class="flex flex-col space-y-2">
+        <a href="/" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">HOME</a>
+        <a href="/about" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">ABOUT US</a>
+        <a href="/clique-crew" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">CLIQUE CREW</a>
+        <a href="/philanthropy" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">PHILANTHROPY</a>
+        <a href="/contact" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">CONTACT US</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script> 

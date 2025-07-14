@@ -1,0 +1,123 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import ContactForm from "@/components/ContactForm.tsx";
+---
+
+<Layout title="Contact Us - The Closet Clique">
+    <Header />
+
+    <main class="min-h-screen bg-white">
+        <!-- Hero Section -->
+        <section class="py-6 bg-primary">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-xl md:text-4xl font-pacifico text-white">Contact Us</h1>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <ContactForm client:load />
+
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <h2 class="text-3xl font-pacifico text-[#5CA1CB] mb-8">Get in touch</h2>
+
+                            <div class="space-y-6">
+                                <!-- Email -->
+                                <div class="flex items-start gap-4 bg-white p-4 rounded-lg">
+                                    <div
+                                        class="w-12 h-12 bg-[#E796BA] rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                                            ></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-[#5CA1CB] mb-1">Email</h3>
+                                        <a
+                                            href="mailto:hello@theclosetclique.com"
+                                            class="text-[#00486D] hover:text-[#E796BA] transition-colors">
+                                            hello@theclosetclique.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="flex items-start gap-4 bg-white p-4 rounded-lg">
+                                    <div
+                                        class="w-12 h-12 bg-[#5CA1CB] rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                            ></path>
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-[#5CA1CB] mb-1">Location</h3>
+                                        <p class="text-[#00486D]">Dallas, Texas</p>
+                                    </div>
+                                </div>
+
+                                <!-- Social Media -->
+                                <div class="flex items-start gap-4 bg-white p-4 rounded-lg">
+                                    <div
+                                        class="w-12 h-12 bg-[#E796BA] rounded-lg flex items-center justify-center flex-shrink-0">
+                                        <svg
+                                            class="w-6 h-6 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-semibold text-[#5CA1CB] mb-1">Follow Us</h3>
+                                        <a href="#" class="text-[#00486D] hover:text-[#E796BA] transition-colors">
+                                            @joinheclosetclique
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+
+

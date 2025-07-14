@@ -1,0 +1,33 @@
+---
+// Instagram section component
+const instagramImages = [
+    'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=300&fit=crop',
+    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=300&h=300&fit=crop',
+  ];
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Brush Script MT', cursive;">
+        follow us on insta
+      </h3>
+      <p class="text-xl">@joinheclosetclique</p>
+    </div>
+
+    <!-- Instagram grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {instagramImages.map((image) => (
+        <div class="aspect-square bg-gradient-to-br from-[#E796BA] to-[#5CA1CB] rounded-lg">
+          <img src={image} alt="Instagram" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 
