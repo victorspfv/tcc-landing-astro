@@ -4,6 +4,12 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Image from "astro/components/Image.astro";
 import TeamCard from "@/components/TeamCard.astro";
+import img1 from "../assets/images/img1.webp";
+import img2 from "../assets/images/img2.webp";
+import img3 from "../assets/images/img3.webp";
+import img4 from "../assets/images/img4.webp";
+import img5 from "../assets/images/img5.webp";
+import img6 from "../assets/images/img6.webp";
 ---
 
 <Layout title="Clique Crew - The Closet Clique">
@@ -24,11 +30,12 @@ import TeamCard from "@/components/TeamCard.astro";
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid items-center gap-8 lg:grid-cols-2">
                     <Image
+                        layout='constrained'
                         width={1000}
                         height={1000}
-                        src="/src/assets/images/img2.webp"
+                        src={img6}
                         alt="Mia Taraszki"
-                        class="order-2 max-h-96 w-full rounded-md object-cover lg:order-1 shadow-[8px_8px_0px_0px_#5CA1CB]"
+                        class="order-2 max-h-96 w-[80%] rounded-md object-cover lg:order-1 shadow-[8px_8px_0px_0px_#5CA1CB] responsive-image"
                     />
                     <div class="order-1 flex flex-col lg:order-2 lg:items-start lg:text-left">
                         <h1 class="mb-4 text-3xl font-semibold sm:text-5xl">
@@ -62,19 +69,19 @@ import TeamCard from "@/components/TeamCard.astro";
                         name="Ava Taraszki"
                         title="Executive Officer"
                         description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined. Girls can browse, rent or resell outfits within their verified school network. Whether you are a high schooler, college student, or just a girl who loves to shop, The Closet Clique is the perfect place to find the perfect outfit for any occasion."
-                        image="/src/assets/images/img4.webp"
+                        image={img4}
                     />
 					<TeamCard
                         name="Zoe Taraszki"
                         title="Executive Officer"
                         description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined. Girls can browse, rent or resell outfits within "
-                        image="/src/assets/images/img5.webp"
+                        image={img5}
                     />
 					<TeamCard
                         name="Lexi Taraszki"
                         title="Executive Officer"
                         description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined."
-                        image="/src/assets/images/img6.webp"
+                        image={img3}
                     />
                 </div>
             </div>
