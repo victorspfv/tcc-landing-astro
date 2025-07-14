@@ -1,6 +1,7 @@
 import { defineAction, ActionError } from 'astro:actions';
 import { z } from 'astro:schema';
 import nodemailer from 'nodemailer';
+export const prerender = false
 
 export const server = {
   sendContactForm: defineAction({
