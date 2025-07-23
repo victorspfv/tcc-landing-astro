@@ -30,15 +30,15 @@ const gallery2 = [
 ];
 ---
 
-<section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br from-[#5CA1CB]/50 to-[#8DCAC3]/50 overflow-hidden">
-    <div class="absolute inset-0 opacity-60">
+<section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br bg-primary overflow-hidden shadow-lg">
+    <div class="absolute inset-0 pb-8">
         <div class="grid grid-cols-6 gap-0 h-full">
           {/* Creating a photo grid effect with placeholder images */}
           {Array.from({ length: 24 }, (_, i) => (
             <div
               class="bg-cover bg-center"
               style={{
-                backgroundImage: `url(${gallery[i % gallery.length]})`,
+                backgroundImage: `url(${gallery2[i % gallery.length]})`,
               }}
             />
           ))}
@@ -46,12 +46,12 @@ const gallery2 = [
     </div>
 
       {/* Overlay */}
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#5CA1CB]/10 to-[#5CA1CB]/20" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#5CA1CB]/10 to-[#5CA1CB]/1" />
 
       {/* Content */}
       <div class="relative z-10 flex items-center justify-center min-h-[50vh] lg:min-h-[80vh] px-4">
         <div class="text-center">
-          <h1 class="text-6xl md:text-8xl font-pacifico text-white mb-8 text-shadow">
+          <h1 class="text-6xl md:text-9xl font-pacifico text-white mb-8 text-shadow">
             your clique, your closet
           </h1>
         </div>
