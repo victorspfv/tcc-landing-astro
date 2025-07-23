@@ -1,7 +1,6 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import Dropdown from "./dropown.astro";
-
+import logo from "../assets/logo.svg";
 const pathname = Astro.url.pathname;
 
 const menuitems = [
@@ -32,7 +31,7 @@ const menuitems = [
     <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between">
             <a href="/" class="text-lg">
-              <img src="/src/assets/logo.svg" alt="The Closet Clique Logo" class=" h-10" />
+              <img src={logo.src} alt="The Closet Clique Logo" class=" h-10" />
             </a>
             <div class="block lg:hidden">
                 <MenuIcon class="w-4 h-4 text-gray-800" />
