@@ -15,11 +15,24 @@ const gallery = [
     img1.src, img2.src, img3.src, img4.src, img5.src, 
     img6.src, img7.src, img8.src, img9.src, img10.src
 ];
+
+const gallery2 = [
+    "/src/assets/images/gallery/img1.webp",
+    "/src/assets/images/gallery/img2.webp",
+    "/src/assets/images/gallery/img3.webp",
+    "/src/assets/images/gallery/img4.webp",
+    "/src/assets/images/gallery/img5.webp",
+    "/src/assets/images/gallery/img6.webp",
+    "/src/assets/images/gallery/img7.webp",
+    "/src/assets/images/gallery/img8.webp",
+    "/src/assets/images/gallery/img9.webp",
+    "/src/assets/images/gallery/img10.webp",
+];
 ---
 
-<section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br from-[#5CA1CB] to-[#8DCAC3] overflow-hidden">
+<section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br from-[#5CA1CB]/50 to-[#8DCAC3]/50 overflow-hidden">
     <div class="absolute inset-0 opacity-60">
-        <div class="grid grid-cols-6 gap-1 h-full">
+        <div class="grid grid-cols-6 gap-0 h-full">
           {/* Creating a photo grid effect with placeholder images */}
           {Array.from({ length: 24 }, (_, i) => (
             <div
@@ -33,7 +46,7 @@ const gallery = [
     </div>
 
       {/* Overlay */}
-      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#5CA1CB]/30 to-[#5CA1CB]/60" />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#5CA1CB]/10 to-[#5CA1CB]/20" />
 
       {/* Content */}
       <div class="relative z-10 flex items-center justify-center min-h-[50vh] lg:min-h-[80vh] px-4">

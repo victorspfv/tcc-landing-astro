@@ -20,8 +20,8 @@ const instagramImages = [
 ]
 ---
 
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="pt-16 bg-white">
+  <div class="w-full mx-auto px-0">
     <div class="text-center mb-12">
       <h3 class="text-4xl md:text-5xl font-bold mb-4" style="font-pacifico">
         follow us on insta
@@ -30,7 +30,7 @@ const instagramImages = [
     </div>
 
     <!-- Instagram grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 ">
       {instagramImages.map((image) => (
         <div class="aspect-square bg-gradient-to-br from-[#E796BA] to-[#5CA1CB] rounded-lg">
           <img src={image.src} alt="Instagram" class="w-full h-full object-cover" />
