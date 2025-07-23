@@ -43,7 +43,7 @@ const menuitems = [
                     menuitems.map((item) => (
                         <>
                             <li>
-                                <a href={item.path} class={`flex lg:px-3 py-2 text-white hover:text-primary ${pathname.split('/')[1] === item.path.split('/')[1] ? 'text-primary' : ''}`}>
+                                <a href={item.path} class={`flex lg:px-3 py-2 hover:text-primary ${pathname.split('/')[1] === item.path.split('/')[1] ? 'text-primary font-bold' : 'text-white'}`}>
                                     {item.title.toUpperCase()}
                                 </a>
                             </li> 
