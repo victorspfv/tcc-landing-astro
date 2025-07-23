@@ -1,0 +1,136 @@
+---
+export interface Props {
+    id: string;
+    title: string;
+    role: string;
+    triggerText?: string;
+    sections: Array<{
+        type: 'paragraph' | 'section';
+        content: string;
+        heading?: string;
+    }>;
+}
+
+const { 
+    id, 
+    title, 
+    role, 
+    triggerText = "Read more",
+    sections 
+} = Astro.props;
+---
+
+<button
+    class="text-primary font-semibold hover:text-primary/80 transition-colors"
+    onclick={`document.getElementById('${id}').showModal()`}>
+    {triggerText}
+</button>
+
+<dialog 
+    id={id}
+    class="backdrop:bg-black/50 backdrop:backdrop-blur-sm bg-transparent p-0 rounded-xl max-w-2xl w-[90%] mx-auto mt-12"
+    onclick="if (event.target === this) this.close()"
+>
+    <div class="bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden animate-in fade-in-0 zoom-in-95 duration-200">
+        <!-- Header -->
+        <div class="flex items-center justify-between p-6 bg-gradient-to-r from-primary/5 to-secondary/5 border-b border-gray-100">
+            <h3 class="text-2xl font-bold text-gray-900">{title}</h3>
+            <button 
+                class="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 transition-colors group"
+                onclick={`document.getElementById('${id}').close()`}
+                aria-label="Close dialog"
+            >
+                <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="p-6 space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="px-3 py-1 text-sm font-medium text-primary bg-primary/10 rounded-full">{role}</span>
+            </div>
+            
+            {sections.map((section) => (
+                section.type === 'paragraph' ? (
+                    <p class="text-gray-700 leading-relaxed">
+                        {section.content}
+                    </p>
+                ) : (
+                    <div class="pt-4 border-t border-gray-100">
+                        <h4 class="font-semibold text-gray-900 mb-2">{section.heading}</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            {section.content}
+                        </p>
+                    </div>
+                )
+            ))}
+        </div>
+        
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-end">
+            <button 
+                class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors font-medium"
+                onclick={`document.getElementById('${id}').close()`}
+            >
+                Close
+            </button>
+        </div>
+    </div>
+</dialog>
+
+<script define:vars={{ id }}>
+    // Enhanced dialog functionality for this specific modal
+    document.addEventListener('DOMContentLoaded', function() {
+        const dialog = document.getElementById(id);
+        
+        if (dialog) {
+            // Handle escape key
+            dialog.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    dialog.close();
+                }
+            });
+            
+            // Trap focus within dialog when open
+            dialog.addEventListener('keydown', function(event) {
+                if (event.key === 'Tab') {
+                    const focusableElements = dialog.querySelectorAll(
+                        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                    );
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+                    
+                    if (event.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            lastElement.focus();
+                            event.preventDefault();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            firstElement.focus();
+                            event.preventDefault();
+                        }
+                    }
+                }
+            });
+            
+            // Focus first button when dialog opens
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'open') {
+                        if (dialog.hasAttribute('open')) {
+                            const firstButton = dialog.querySelector('button');
+                            if (firstButton) {
+                                setTimeout(() => firstButton.focus(), 100);
+                            }
+                        }
+                    }
+                });
+            });
+            
+            observer.observe(dialog, { attributes: true });
+        }
+    });
+</script> 

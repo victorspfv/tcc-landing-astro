@@ -1,5 +1,17 @@
 ---
 // Hero section with collage background and overlay text
+const gallery = [
+    "/src/assets/images/gallery/img1.webp",
+    "/src/assets/images/gallery/img2.webp", 
+    "/src/assets/images/gallery/img3.webp",
+    "/src/assets/images/gallery/img4.webp",
+    "/src/assets/images/gallery/img5.webp",
+    "/src/assets/images/gallery/img6.webp",
+    "/src/assets/images/gallery/img7.webp",
+    "/src/assets/images/gallery/img8.webp",
+    "/src/assets/images/gallery/img9.webp",
+    "/src/assets/images/gallery/img10.webp",
+]
 ---
 
 <section class="relative min-h-[50vh] lg:min-h-[80vh] bg-gradient-to-br from-[#5CA1CB] to-[#8DCAC3] overflow-hidden">
@@ -10,15 +22,7 @@
             <div
               class="bg-cover bg-center"
               style={{
-                backgroundImage: `url(https://images.unsplash.com/photo-${
-                  [
-                    '1649972904349-6e44c42644a7',
-                    '1581091226825-a6a2a5aee158',
-                    '1519389950473-47ba0277781c',
-                    '1721322800607-8c38375eef04',
-                    '1582562124811-c09040d0a901'
-                  ][i % 5]
-                }?w=300&h=300&fit=crop)`,
+                backgroundImage: `url(${gallery[i % gallery.length]})`,
               }}
             />
           ))}

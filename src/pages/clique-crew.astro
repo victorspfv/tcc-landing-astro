@@ -4,10 +4,57 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Image from "astro/components/Image.astro";
 import TeamCard from "@/components/TeamCard.astro";
-import img3 from "../assets/images/img3.webp";
-import img4 from "../assets/images/img4.webp";
-import img5 from "../assets/images/img5.webp";
-import img6 from "../assets/images/img6.webp";
+import PersonModal from "@/components/PersonModal.astro";
+import mia from "../assets/images/founders/mia.webp";
+import andreaNayfakh from "../assets/images/founders/andrea-nayfa.webp";
+import zoe from "../assets/images/crew/zoe.webp";
+import lexi from "../assets/images/crew/lexi.webp";
+import ella from "../assets/images/crew/ella.webp";
+import ava from "../assets/images/crew/ava.webp";
+import AmbassadorsGallery from "@/components/AmbassadorsGallery.astro";
+
+const andreaModalContent = [
+    {
+        type: "paragraph" as const,
+        content: "Andrea graduated from Texas A&M University (Gig'em!) with a degree in Communications and Marketing. She launched her career in television, working in news, national marketing, and sales before transitioning into luxury real estate with Allie Beth Allman and Associates."
+    },
+    {
+        type: "paragraph" as const,
+        content: "Raised in a family with deep roots in the dry goods and textile business, Andrea's passion for creativity and entrepreneurship started early. That legacy continues through her work at The Closet Clique, where she is focused on giving the next generation tools they can carry into any career path. She believes skills like communication, ownership, and business literacy are critical for long-term success."
+    },
+    {
+        type: "paragraph" as const,
+        content: "Outside of The Closet Clique, Andrea is an active community leader in Dallas. She has chaired major fundraising events, led volunteer efforts, and supported organizations focused on children's health and family causes. Her natural energy and ability to unite people around purpose driven work continues to be one of her greatest strengths."
+    },
+    {
+        type: "paragraph" as const,
+        content: "Andrea lives in Dallas with her husband and their three children. Her daughter, Ella Kate, the youngest of the family, is also her business partner at The Closet Clique, making this journey both personal and powerful."
+    },
+];
+
+const miaModalContent = [
+    {
+        type: "paragraph" as const,
+        content: "After graduating from TCU (Go Frogs!) with a BBA in Marketing and a minor in Advertising and Public Relations, Mia spent years building asuccessful career in outside and pharmaceutical sales. There, she developed a strong foundation in relationship building, strategy, and brand communication. Eventually, she shifted her focus to full-time family life, bringing that same energy and leadership into her home and community."
+    },
+    {
+        type: "paragraph" as const,
+        content: "With a house full of girls, Mia has experienced firsthand the excitement and expectation of showing up for every occasion feeling confident and put together. That real-life need sparked the idea for The Closet Clique."
+    },
+    {
+        type: "paragraph" as const,
+        content: "The Closet Clique is more than an app. It is a movement to make closet sharing accessible, seamless, and community based. Girls can rent and resell within their school networks, expanding their wardrobes, supporting sustainability, and earning from what they already own."
+    },
+    {
+        type: "paragraph" as const,
+        content: "Mia is especially proud to be building this alongside her daughters and their community of friends. They are her toughest critics, biggest cheerleaders, and daily collaborators. Together, they are creating something that empowers young women, encourages mindful consumption, and inspires real-world entrepreneurial thinking."
+    },
+    {
+        type: "paragraph" as const,
+        content: "Mia lives in Dallas with her husband, their three daughters (ranging from high school to college), and their youngest, a son who proudly claims the title of best little brother ever"
+    }
+    
+];
 ---
 
 <Layout title="Clique Crew - The Closet Clique">
@@ -17,9 +64,7 @@ import img6 from "../assets/images/img6.webp";
         <!-- Hero Section -->
         <section class="py-6 bg-primary">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-xl md:text-4xl font-pacifico text-white">
-					Introducing the Clique Crew
-				</h1>
+                <h1 class="text-xl md:text-4xl font-pacifico text-white">Introducing the Clique Crew</h1>
             </div>
         </section>
 
@@ -28,30 +73,66 @@ import img6 from "../assets/images/img6.webp";
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid items-center gap-8 lg:grid-cols-2">
                     <Image
-                        layout='constrained'
-                        width={1000}
-                        height={1000}
-                        src={img6}
+                        width={400}
+                        height={400}
+                        src={mia}
                         alt="Mia Taraszki"
-                        class="order-2 max-h-96 w-[80%] rounded-md object-cover lg:order-1 shadow-[8px_8px_0px_0px_#5CA1CB] responsive-image"
+                        class="order-2 max-h-96 w-[80%] rounded-md object-cover lg:order-1 shadow-[8px_8px_0px_0px_#5CA1CB]"
                     />
                     <div class="order-1 flex flex-col lg:order-2 lg:items-start lg:text-left">
-                        <h1 class="mb-4 text-3xl font-semibold sm:text-5xl">
+                        <h2 class="mb-4 text-3xl font-semibold sm:text-5xl">
                             <span class="text-primary text-3xl">Founder</span>
                             <br />
                             Mia Taraszki
-                        </h1>
+                        </h2>
                         <p class="text-muted-foreground mb-2 max-w-xl lg:text-lg">
-                            Connector, party planner, proud girl mom, and founder of The Closet Clique, Mia believes
-                            life is a series of moments worth celebrating—whether it’s a themed birthday dinner, a
-                            homecoming pre-party, or a weekly game of mahjong with friends.
+                            Connector, party planner, proud girl mom, and Co-Founder of The Closet Clique, Mia believes
+                            life is a series of moments worth celebrating. Whether it is a themed birthday dinner, a
+                            homecoming preparty, or a weekly game of mahjong with friends, she is always finding ways to
+                            make everyday experiences more memorable.
                         </p>
-                        <a
-                            href="https://www.linkedin.com/in/mia-taraszki/"
-                            target="_blank"
-                            class="text-primary font-semibold">
-                            Continue reading
-                        </a>
+                        <PersonModal
+                            id="mia-dialog"
+                            title="Mia Taraszki"
+                            role="Founder"
+                            sections={miaModalContent}
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Andrea Nayfa Section -->
+        <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid items-center gap-8 lg:grid-cols-2">
+                    <Image
+                        loading="lazy"
+                        width={400}
+                        height={400}
+                        src={andreaNayfakh}
+                        alt="Andrea Nayfakh"
+                        class="order-2 max-h-96 w-[80%] rounded-md object-cover lg:order-1 shadow-[8px_8px_0px_0px_#5CA1CB]"
+                    />
+                    <div class="order-1 flex flex-col lg:order-2 lg:items-start lg:text-left">
+                        <h2 class="mb-4 text-3xl font-semibold sm:text-5xl">
+                            <span class="text-primary text-3xl">Co-Founder</span>
+                            <br />
+                            Andrea Nayfa
+                        </h2>
+                        <p class="text-muted-foreground mb-2 max-w-xl lg:text-lg">
+                            Andrea Nayfa is a Co-Founder of The Closet Clique, a curated fashion marketplace designed to
+                            empower a community of young entrepreneurs through style, sustainability, and business
+                            minded thinking. More than just a platform to rent and resell fashion and dorm accessories,
+                            The Closet Clique is a launchpad for young adults to gain real-world experience, build
+                            confidence, and explore the possibilities of entrepreneurship.
+                        </p>
+                        <PersonModal
+                            id="andrea-dialog"
+                            title="Andrea Nayfa"
+                            role="Co-Founder"
+                            sections={andreaModalContent}
+                        />
                     </div>
                 </div>
             </div>
@@ -66,24 +147,31 @@ import img6 from "../assets/images/img6.webp";
                     <TeamCard
                         name="Ava Taraszki"
                         title="Executive Officer"
-                        description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined. Girls can browse, rent or resell outfits within their verified school network. Whether you are a high schooler, college student, or just a girl who loves to shop, The Closet Clique is the perfect place to find the perfect outfit for any occasion."
-                        image={img4}
+                        description="College Division"
+                        image={ava}
                     />
-					<TeamCard
+                    <TeamCard
                         name="Zoe Taraszki"
                         title="Executive Officer"
-                        description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined. Girls can browse, rent or resell outfits within "
-                        image={img5}
+                        description="High School Division"
+                        image={zoe}
                     />
-					<TeamCard
+                    <TeamCard
                         name="Lexi Taraszki"
                         title="Executive Officer"
-                        description="A resale and rental platform designed exclusively for high school and college students. Our app makes closet sharing simple and streamlined."
-                        image={img3}
+                        description="High School Division"
+                        image={lexi}
+                    />
+                    <TeamCard
+                        name="Ella Kate Nayfa"
+                        title="Executive Officer"
+                        description="High School Division"
+                        image={ella}
                     />
                 </div>
             </div>
         </section>
+        <AmbassadorsGallery />
     </main>
 
     <Footer />
