@@ -1,6 +1,6 @@
 ---
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import logo from "../assets/logo.svg";
+import logo from "@/assets/logo.svg";
 const pathname = Astro.url.pathname;
 
 const menuitems = [
@@ -43,7 +43,7 @@ const menuitems = [
                     menuitems.map((item) => (
                         <>
                             <li>
-                                <a href={item.path} class={`flex lg:px-3 py-2 text-gray-600 hover:text-primary ${pathname === item.path ? 'text-primary' : ''}`}>
+                                <a href={item.path} class={`flex lg:px-3 py-2 text-gray-600 hover:text-primary ${pathname.split('/')[1] === item.path.split('/')[1] ? 'text-primary' : ''}`}>
                                     {item.title}
                                 </a>
                             </li> 
