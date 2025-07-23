@@ -1,81 +1,67 @@
 ---
-import img1 from "/src/assets/images/ambassadors/e-img1.webp";
-import img2 from "/src/assets/images/ambassadors/e-img2.webp";
-import img3 from "/src/assets/images/ambassadors/e-img3.webp";
-import img4 from "/src/assets/images/ambassadors/e-img4.webp";
-import img5 from "/src/assets/images/ambassadors/e-img5.webp";
-import img6 from "/src/assets/images/ambassadors/e-img6.webp";
-import img7 from "/src/assets/images/ambassadors/e-img7.webp";
-import img8 from "/src/assets/images/ambassadors/e-img8.webp";
-import img9 from "/src/assets/images/ambassadors/e-img9.webp";
-import img10 from "/src/assets/images/ambassadors/e-img10.webp";
-import img11 from "/src/assets/images/ambassadors/e-img11.webp";
-import img12 from "/src/assets/images/ambassadors/e-img12.webp";
-import img13 from "/src/assets/images/ambassadors/e-img13.webp";
-import img14 from "/src/assets/images/ambassadors/e-img14.webp";
-import img15 from "/src/assets/images/ambassadors/e-img15.webp";
+
 
 // Instagram section component
 const ambassadorsImages = [
     {
         name: "Blakely",
-        image: img1,
+        image: "/src/assets/images/ambassadors/e-img1.webp",
     },
     {
         name: "Isabel",
-        image: img2,
+        image: "/src/assets/images/ambassadors/e-img2.webp",
     },
     {
         name: "Emelie",
-        image: img3,
+        image: "/src/assets/images/ambassadors/e-img3.webp",
     },
     {
         name: "Gracelyn",
-        image: img4,
+        image: "/src/assets/images/ambassadors/e-img4.webp",
     },
     {
         name: "Lyla",
-        image: img5,
+        image: "/src/assets/images/ambassadors/e-img5.webp",
     },
     {
         name: "Molly",
-        image: img6,
+        image: "/src/assets/images/ambassadors/e-img6.webp",
     },
     {
         name: "Charlotte",
-        image: img7,
+        image: "/src/assets/images/ambassadors/e-img7.webp",
     },
     {
         name: "Valentina",
-        image: img8,
+        image: "/src/assets/images/ambassadors/e-img8.webp",
     },
     {
         name: "Morgan",
-        image: img9,
+        image: "/src/assets/images/ambassadors/e-img9.webp",
     },
     {
         name: "Maya",
-        image: img10,
+        image: "/src/assets/images/ambassadors/e-img10.webp",
     },
     {
         name: "Finley",
-        image: img11,
+        image: "/src/assets/images/ambassadors/e-img11.webp",
     },
     {
         name: "Evelyn",
-        image: img12,
+        image: "/src/assets/images/ambassadors/e-img12.webp"    ,
     },
     {
         name: "Gigi",
-        image: img13,
+        image: "/src/assets/images/ambassadors/e-img13.webp",
     },
     {
         name: "Sadie",
-        image: img14,
+        image: "/src/assets/images/ambassadors/e-img14.webp",
     },
     {
         name: "Hannah",
-        image: img15,
+        image: "/src/assets/images/ambassadors/e-img15.webp",
     },
 ];
 ---
@@ -94,7 +80,7 @@ const ambassadorsImages = [
                 ambassadorsImages.map((image) => (
                     <div class="flex flex-col items-center justify-center">
                         <div class="aspect-square bg-gradient-to-br from-[#E796BA] to-[#5CA1CB] rounded-lg">
-                            <img src={image.image.src} alt={image.name} class="w-full h-full object-cover" />
+                            <img src={image.image} alt={image.name} class="w-full h-full object-cover" />
                         </div>
                         <p class="text-center text-sm text-gray-500 mt-2 font-bold">{image.name}</p>
                     </div>
