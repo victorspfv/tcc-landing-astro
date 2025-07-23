@@ -36,32 +36,258 @@ const pathname = Astro.url.pathname;
 
       <!-- Mobile menu button -->
       <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-[#5CA1CB] hover:text-[#E796BA]">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+        <button 
+          id="mobile-menu-button" 
+          class="relative w-10 h-10 text-[#5CA1CB] hover:text-[#E796BA] focus:outline-none focus:ring-2 focus:ring-[#5CA1CB] rounded-lg transition-colors"
+          aria-label="Toggle mobile menu"
+        >
+          <span class="sr-only">Open main menu</span>
+          <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out hamburger-line-1"></span>
+            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out mt-1.5 hamburger-line-2"></span>
+            <span aria-hidden="true" class="block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out mt-3 hamburger-line-3"></span>
+          </div>
         </button>
       </div>
     </div>
 
+    <!-- Mobile menu overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden opacity-0 invisible transition-all duration-300 ease-in-out"></div>
+
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden pb-4">
-      <div class="flex flex-col space-y-2">
-        <a href="/" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">HOME</a>
-        <a href="/about" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">ABOUT US</a>
-        <a href="/clique-crew" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">CLIQUE CREW</a>
-        <a href="/philanthropy" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">PHILANTHROPY</a>
-        <a href="/contact" class="text-[#5CA1CB] hover:text-[#E796BA] font-medium py-2">CONTACT US</a>
+    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 md:hidden transform translate-x-full transition-transform duration-300 ease-in-out">
+      <div class="flex flex-col h-full">
+        <!-- Mobile menu header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+          <img src={logo.src} alt="Logo" class="h-10" />
+          <button 
+            id="mobile-menu-close" 
+            class="w-8 h-8 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#5CA1CB] rounded-lg transition-colors"
+            aria-label="Close mobile menu"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Mobile menu navigation -->
+        <nav class="flex-1 px-6 py-8">
+          <div class="flex flex-col space-y-6">
+            <a 
+              href="/" 
+              class={`text-lg font-medium transition-colors duration-200 border-b border-transparent hover:border-[#E796BA] pb-2 ${pathname === '/' ? 'text-[#E796BA] border-[#E796BA]' : 'text-[#5CA1CB] hover:text-[#E796BA]'}`}
+            >
+              HOME
+            </a>
+            <a 
+              href="/about" 
+              class={`text-lg font-medium transition-colors duration-200 border-b border-transparent hover:border-[#E796BA] pb-2 ${pathname === '/about' ? 'text-[#E796BA] border-[#E796BA]' : 'text-[#5CA1CB] hover:text-[#E796BA]'}`}
+            >
+              ABOUT US
+            </a>
+            <a 
+              href="/clique-crew" 
+              class={`text-lg font-medium transition-colors duration-200 border-b border-transparent hover:border-[#E796BA] pb-2 ${pathname === '/clique-crew' ? 'text-[#E796BA] border-[#E796BA]' : 'text-[#5CA1CB] hover:text-[#E796BA]'}`}
+            >
+              CLIQUE CREW
+            </a>
+            <a 
+              href="/philanthropy" 
+              class={`text-lg font-medium transition-colors duration-200 border-b border-transparent hover:border-[#E796BA] pb-2 ${pathname === '/philanthropy' ? 'text-[#E796BA] border-[#E796BA]' : 'text-[#5CA1CB] hover:text-[#E796BA]'}`}
+            >
+              PHILANTHROPY
+            </a>
+            <a 
+              href="/contact" 
+              class={`text-lg font-medium transition-colors duration-200 border-b border-transparent hover:border-[#E796BA] pb-2 ${pathname === '/contact' ? 'text-[#E796BA] border-[#E796BA]' : 'text-[#5CA1CB] hover:text-[#E796BA]'}`}
+            >
+              CONTACT US
+            </a>
+          </div>
+        </nav>
+        
+        <!-- Mobile menu footer -->
+        <div class="p-6 border-t border-gray-100">
+          <div class="text-center text-sm text-gray-500">
+            <p>© 2024 The Closet Clique</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </header>
 
-<script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+<script is:inline>
+  // Enhanced mobile menu functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const body = document.body;
+    
+    let isMenuOpen = false;
+    
+    // Initialize menu state immediately on page load
+    setTimeout(() => {
+      resetMenuState();
+    }, 0);
 
-  mobileMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    function resetMenuState() {
+      // Force menu to closed state on page load
+      isMenuOpen = false;
+      
+      // Ensure all elements are in closed state
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('opacity-100', 'visible');
+        mobileOverlay.classList.add('opacity-0', 'invisible');
+      }
+      
+      if (mobileMenu) {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      }
+      
+      // Reset hamburger icon
+      const line1 = document.querySelector('.hamburger-line-1');
+      const line2 = document.querySelector('.hamburger-line-2');
+      const line3 = document.querySelector('.hamburger-line-3');
+      
+      if (line1) line1.classList.remove('rotate-45', 'mt-1.5');
+      if (line2) line2.classList.remove('opacity-0');
+      if (line3) line3.classList.remove('-rotate-45', '-mt-1.5');
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+    }
+
+    function openMenu() {
+      isMenuOpen = true;
+      
+      // Show overlay
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('opacity-0', 'invisible');
+        mobileOverlay.classList.add('opacity-100', 'visible');
+      }
+      
+      // Show menu
+      if (mobileMenu) {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      }
+      
+      // Animate hamburger to X
+      const line1 = document.querySelector('.hamburger-line-1');
+      const line2 = document.querySelector('.hamburger-line-2');
+      const line3 = document.querySelector('.hamburger-line-3');
+      
+      if (line1) line1.classList.add('rotate-45', 'mt-1.5');
+      if (line2) line2.classList.add('opacity-0');
+      if (line3) line3.classList.add('-rotate-45', '-mt-1.5');
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+      
+      // Focus first menu item (with safety check)
+      setTimeout(() => {
+        const firstMenuItem = mobileMenu?.querySelector('a');
+        try {
+          if (firstMenuItem && typeof firstMenuItem.focus === 'function') {
+            firstMenuItem.focus();
+          }
+        } catch(e) {
+          // Focus might fail
+        }
+      }, 100);
+    }
+
+    function closeMenu() {
+      isMenuOpen = false;
+      
+      // Hide overlay
+      if (mobileOverlay) {
+        mobileOverlay.classList.remove('opacity-100', 'visible');
+        mobileOverlay.classList.add('opacity-0', 'invisible');
+      }
+      
+      // Hide menu
+      if (mobileMenu) {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      }
+      
+      // Animate X back to hamburger
+      const line1 = document.querySelector('.hamburger-line-1');
+      const line2 = document.querySelector('.hamburger-line-2');
+      const line3 = document.querySelector('.hamburger-line-3');
+      
+      if (line1) line1.classList.remove('rotate-45', 'mt-1.5');
+      if (line2) line2.classList.remove('opacity-0');
+      if (line3) line3.classList.remove('-rotate-45', '-mt-1.5');
+      
+      // Restore body scroll
+      document.body.style.overflow = '';
+      
+      // Return focus to menu button (with safety check)
+      try {
+        mobileMenuButton?.focus();
+      } catch(e) {
+        // Focus might fail if button is not focusable
+      }
+    }
+
+    // Toggle menu on button click
+    mobileMenuButton?.addEventListener('click', () => {
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close menu on close button click
+    mobileMenuClose?.addEventListener('click', closeMenu);
+
+    // Close menu on overlay click
+    mobileOverlay?.addEventListener('click', closeMenu);
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+
+    // Handle tab navigation (simplified version)
+    mobileMenu?.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab' && isMenuOpen) {
+        // Allow natural tab flow within menu
+      }
+    });
+
+    // Close menu when clicking on navigation links (only if actually navigating)
+    const navLinks = mobileMenu?.querySelectorAll('a');
+    navLinks?.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        const currentPath = window.location.pathname;
+        
+        // Only close menu if navigating to a different page
+        if (href && href !== currentPath) {
+          setTimeout(closeMenu, 150);
+        } else {
+          // If staying on same page, close immediately
+          closeMenu();
+        }
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && isMenuOpen) {
+        closeMenu();
+      }
+    });
   });
 </script> 
