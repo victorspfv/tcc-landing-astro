@@ -8,7 +8,7 @@ import img6 from "../assets/images/gallery/img6.webp"
 import img7 from "../assets/images/gallery/img7.webp"
 import img8 from "../assets/images/gallery/img8.webp"
 // Instagram section component
-const instagramImages = [
+const instagramImagesLg = [
     img1,
     img2, 
     img3,
@@ -17,6 +17,13 @@ const instagramImages = [
     img6,
     img7,
     img8,
+]
+
+const instagramImagesSm = [
+    img1,
+    img2, 
+    img3,
+    img4,
 ]
 ---
 
@@ -30,8 +37,16 @@ const instagramImages = [
     </div>
 
     <!-- Instagram grid -->
-    <div class="grid grid-cols-2 md:grid-cols-4 ">
-      {instagramImages.map((image) => (
+    <div class="grid-cols-2 md:grid-cols-4 hidden lg:grid">
+      {instagramImagesLg.map((image) => (
+        <div class="aspect-square bg-gradient-to-br from-[#E796BA] to-[#5CA1CB] rounded-lg">
+          <img src={image.src} alt="Instagram" class="w-full h-full object-cover" />
+        </div>
+      ))}
+    </div>
+
+    <div class="grid-cols-2 md:grid-cols-4 grid lg:hidden">
+      {instagramImagesSm.map((image) => (
         <div class="aspect-square bg-gradient-to-br from-[#E796BA] to-[#5CA1CB] rounded-lg">
           <img src={image.src} alt="Instagram" class="w-full h-full object-cover" />
         </div>
