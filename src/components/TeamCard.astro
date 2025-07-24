@@ -13,14 +13,9 @@ const { name, title, description, image } = Astro.props;
         alt={name}
         class="max-h-96 w-full rounded-md object-cover shadow-[8px_8px_0px_0px_#5CA1CB]"
     />
-    <div class="flex flex-col items-start gap-4">
-        <span
-            data-slot="badge"
-            class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90 shrink">
-            {title}
-        </span>
+    <div class="flex flex-col items-start gap-1">
         <h2 class="text-2xl font-semibold text-balance md:max-w-lg lg:text-4xl">
-            {name}
+            {name}, {title}
         </h2>
         <p class="text-muted-foreground md:max-w-lg">
             {description}
