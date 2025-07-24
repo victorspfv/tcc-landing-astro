@@ -27,14 +27,14 @@ const menuitems = [
 ];
 ---
 
-<header class="flex flex-col lg:flex-row justify-between lg:justify-start items-center lg:items-end lg:gap-8 my-5 lg:my-0 pr-4 lg:h-[120px] bg-secondary">
+<header class="flex flex-col lg:flex-row justify-between lg:justify-start items-center lg:items-end lg:gap-8 my-5 lg:my-0  lg:h-[120px] bg-secondary">
     <Astronav>
         <div class="flex w-full lg:w-auto items-center justify-between bg-white h-full px-4">
             <a href="/" class="text-lg">
               <img src={logo.src} alt="The Closet Clique Logo" class=" h-16 lg:h-20" />
             </a>
-            <div class="block lg:hidden">
-                <MenuIcon class="w-4 h-4 text-gray-800" />
+            <div class="lg:hidden bg-primary rounded-full p-2 h-10 w-10 flex items-center justify-center">
+                <MenuIcon class="w-5 h-5 text-white" />
             </div>
         </div>
         <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 p-4">
